@@ -1,0 +1,31 @@
+<div class="panel panel-default" id="shopping-list-item-form" ng-controller="ShoppingListItemCtrl">
+    <div class="panel-body">
+        <button class="btn btn-default" ng-click="goBackToShoppingListView()">Go Back</button>
+
+        <h1>Shopping List Item</h1>
+
+        <form name="createShoppingListItemForm" novalidate>
+            <div class="form-group">
+                <label for="shoppingListItemName">Name</label>
+                <input type="text" class="form-control" ng-model="shoppingListItem.name" required placeholder="Apples">
+            </div>
+            <div class="form-group">
+                <label for="shoppingListItemDescription">Description</label>
+                <input type="text" class="form-control" ng-model="shoppingListItem.description"
+                       placeholder="Delicious red apples...">
+            </div>
+            <div class="form-group">
+                <label for="shoppingListItemQuantity">Quantity</label>
+                <input type="number" class="form-control" ng-model="shoppingListItem.quantity" min="0"
+                       required placeholder="6">
+            </div>
+
+            <!--TODO: purchased, tags-->
+            <button type="submit" class="btn btn-default" ng-disabled="!createShoppingListItemForm.$valid"
+                    ng-click="createAndAddShoppingListItem()">
+                Submit
+            </button>
+        </form>
+
+    </div>
+</div>

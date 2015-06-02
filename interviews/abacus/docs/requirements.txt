@@ -1,0 +1,17 @@
+Minimum Requirements:
+
+    X User authentication (can be email, facebook, google, github, etc...)
+
+    X Users will be able to add an item to the list.
+        a. Information you’ll want to capture is the user adding the item, a description of the item, and the amount.
+
+    X Users will be able to mark the item as “purchased”.
+
+    Each item can optionally have tags (i.e. “Snack”, “Dairy”, “Vegetables”).
+
+    The list can be filtered by tags and if the item is purchased.
+
+    Price should be displayed for each item and the total list.
+        a. Prices can be retrieved from an API at: http://item­price.herokuapp.com/get_price?item=:item_name
+        b. Example to get a price for apples you make a get request to: http://item­price.herokuapp.com/get_price?item=apples which will return: {"item":"apples","price":26.48}
+    ￼￼

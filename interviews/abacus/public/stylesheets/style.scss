@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#main-container {
+  padding-top: 50px;
+}
+
+#shopping-lists, #shopping-list {
+  width: 40%;
+  margin: auto;
+
+  #shopping-list-heading {
+    text-align: center
+  }
+}
+
+#shopping-list-item-form {
+  width: 60%
+}

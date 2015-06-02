@@ -1,0 +1,13 @@
+extends ../layout.jade
+
+block content
+    div.well(style="width: 40%; margin: auto")
+        h3(style="text-align: center") Log in
+        br
+        a.btn.btn-block.btn-social.btn-github(href="/auth/github", style="width: 60%; margin: auto")
+            i.fa.fa-github
+            span Login with Github
+        br
+        a.btn.btn-block.btn-social.btn-github(href="/auth/google", style="width: 60%; margin: auto")
+            i.fa.fa-google
+            span Login with Google

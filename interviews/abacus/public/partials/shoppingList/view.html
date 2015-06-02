@@ -1,0 +1,43 @@
+<div class="panel panel-default" id="shopping-lists" ng-controller="ShoppingListCtrl">
+    <div class="panel-heading shopping-list-heading" id="shopping-list-heading">
+        <span class="glyphicon glyphicon-chevron-left" style="float: left" aria-hidden="true"
+              ng-click="goBackToShoppingListsView()"></span>
+        <h2>{{ shoppingList.name }}</h2>
+    </div>
+    <div class="panel-body">
+        <p> {{ shoppingList.description || "No description available." }} <p>
+
+        <!--<div class="input-group">-->
+            <!--<span class="input-group-addon">Filter by Tags</span>-->
+            <!--<input type="text" class="form-control" placeholder="Omelette, Pepper, Red..."/>-->
+        <!--</div>-->
+
+        <br/>
+
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-sm btn-default" ng-click="switchPurchaseFilter(true)"
+                    ng-class="{ 'active' : showPurchasedItems }">
+                    Purchased</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="switchPurchaseFilter(false)"
+                    ng-class="{ 'active' : !showPurchasedItems }">
+                    To Buy</button>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="shoppingListItem in shoppingList.shoppingListItems | filter: { purchased: showPurchasedItems }">
+            <button type="button" class="btn btn-sm" ng-click="markOnePurchased(shoppingListItem)"
+                    ng-class="{ 'btn-danger': !shoppingListItem.purchased, 'btn-success': shoppingListItem.purchased }">
+                    {{ shoppingListItem.quantity || 0 }}
+            </button>
+
+            {{ shoppingListItem.name }}
+
+            <!--<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+        </li>
+        <li class="list-group-item" ng-click="addShoppingListItem()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Add an item
+        </li>
+    </ul>
+</div>

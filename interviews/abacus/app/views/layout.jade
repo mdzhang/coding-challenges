@@ -1,0 +1,40 @@
+doctype html
+html(lang='en', ng-app='groupShoppingListApp')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    title= title
+
+    // Styles
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/third-party/bootstrap-social.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    // Angular and third-party modules
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-resource.min.js')
+    script(src='/javascripts/modules/third-party/angular-ui-router.min.js')
+    script(src='/javascripts/modules/third-party/underscore.min.js')
+
+    // Angular app files
+    script(src='/javascripts/app.js')
+    script(src='/javascripts/controllers.js')
+
+body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        div.navbar-header
+            a.navbar-brand(href='/home') Group Shopping List
+        div#navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+                if user
+                    li
+                        a= user.username
+                    li
+                        a(href='/user/logout') Logout
+                else
+                    li
+                        a(href='/user/login') Login
+    div#main-container
+        block content
+

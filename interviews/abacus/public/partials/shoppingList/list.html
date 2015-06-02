@@ -1,0 +1,17 @@
+<div class="panel panel-default" id="shopping-lists" ng-controller="ManageShoppingListsCtrl">
+    <div class="panel-heading" id="shopping-list-heading"><h2>My Shopping Lists</h2></div>
+
+    <div class="panel-body">
+        <p>Click to view the contents of the selected shopping list.</p>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="shoppingList in shoppingLists" ng-click="selectShoppingList(shoppingList)">
+            {{ shoppingList.name }}
+        </li>
+        <li class="list-group-item" ng-click="addShoppingList()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Create a new shopping list
+        </li>
+    </ul>
+</div>
